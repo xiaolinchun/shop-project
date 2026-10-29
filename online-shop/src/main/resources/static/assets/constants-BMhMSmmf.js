@@ -1,1 +1,0 @@
-var e={ONLINE:`在售`,FROZEN:`已冻结`,OFFLINE:`已下架`},t={QUEUED:`排队中`,TRADING:`交易中`,SUCCESS:`交易成功`,FAILURE:`交易作废`,FAILED:`失败`,CANCELLED:`撤销`,RE_QUEUE:`重新排队`};export{e as n,t};
