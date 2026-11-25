@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: online-shop
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/online_shop_v4?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: "200525gao"
+  jackson:
+    time-zone: Asia/Shanghai
+    date-format: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
+
+mybatis-plus:
+  type-enums-package: com.shop.online_shop.enums
+  configuration:
+    map-underscore-to-camel-case: true
+
+# v4.0 业务配置
+app:
+  # 待支付超时（秒），默认 24h；联调超时取消时可改为 30 秒
+  pending-pay-timeout-seconds: 86400
+  # 后台任务调度周期（毫秒），要求 ≤ 5 分钟
+  task-interval-ms: 300000
+  # 图片上传目录（相对工作目录）
+  upload-dir: uploads
+  # 模拟渠道响应延迟上限（秒）
+  mock-delay-seconds: 1
+
+logging:
+  level:
+    com.shop: INFO
